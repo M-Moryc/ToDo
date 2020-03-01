@@ -13,7 +13,7 @@ class notes extends Component {
     state ={
         notesTable: []
     };
- 
+
     addNote = () => {
         const test = new NoteData (prompt());
         console.log(test)
@@ -25,6 +25,9 @@ class notes extends Component {
     render() {
         return (
         <div className={classes.notes__box}>
+            {
+              this.state.notesTable.map((item, i) => <Note addNote={this.addNote} text={item.text}/>
+            )}
             <Note addNote={this.addNote} />
         </div>
         );

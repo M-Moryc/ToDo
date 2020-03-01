@@ -6,7 +6,7 @@ const note = (props) => {
     return (
         <div className={classes.note}>
             <div>
-                <p>{}</p>
+                <p>{props.text}</p>
             </div>
             <div onClick={props.addNote}>+</div>
         </div>
