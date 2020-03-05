@@ -30,6 +30,23 @@ class notes extends Component {
       console.log(this.state.notesTable);
     }
 
+    componentDidMount() {
+        this.userData = JSON.parse(localStorage.getItem('user'));
+
+        if (localStorage.getItem('user')) {
+            this.setState({
+                notesTable : this.userData.notesTable
+            })
+        } else {
+            this.setState({
+                notesTable: [" "]
+            })
+        }
+    }
+    componentWillUpdate(nextProps, nextState) {
+        localStorage.setItem('user', JSON.stringify(nextState));
+    }
+
     render() {
         return (
         <div className={classes.notes__box}>
