@@ -27,6 +27,11 @@
     background-color: black;
     color:white;
 }
+.note div:nth-child(2) {
+    width: 10%;
+    height: 100%;
+    background-color: red;
+}
 .add_note_button {
     position: sticky;
     top: 90vh;

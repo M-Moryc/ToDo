@@ -29,6 +29,14 @@ class notes extends Component {
       })
       console.log(this.state.notesTable);
     }
+    removeNote = (e) => {
+      console.log("removed");
+      let array = this.state.notesTable;
+      array.splice(parseInt(e.target.id), 1);
+      this.setState({
+        notesTable: array
+      });
+    }
 
     componentDidMount() {
         this.userData = JSON.parse(localStorage.getItem('user'));
@@ -51,7 +59,7 @@ class notes extends Component {
         return (
         <div className={classes.notes__box}>
             {
-              this.state.notesTable.map((item, i) => <Note addNote={this.addNote} updateNote={this.updateNote} text={item.text} key={i} id={i}/>
+              this.state.notesTable.map((item, i) => <Note addNote={this.addNote} updateNote={this.updateNote} removeNote={this.removeNote} text={item.text} key={i} id={i}/>
             )}
             <div className={classes.add_note_button} onClick={this.addNote}>+</div>
         </div>
