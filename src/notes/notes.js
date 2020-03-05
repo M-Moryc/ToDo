@@ -53,6 +53,7 @@ class notes extends Component {
             {
               this.state.notesTable.map((item, i) => <Note addNote={this.addNote} updateNote={this.updateNote} text={item.text} key={i} id={i}/>
             )}
+            <div className={classes.add_note_button} onClick={this.addNote}>+</div>
         </div>
         );
     }

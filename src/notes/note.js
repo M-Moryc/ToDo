@@ -8,7 +8,7 @@ const note = (props) => {
             <div onClick={props.updateNote} id={props.id}>
                 <p>{props.text}</p>
             </div>
-            <div onClick={props.addNote}>+</div>
+            <div onClick={props.removeNote}>-</div>
         </div>
     );
 }
