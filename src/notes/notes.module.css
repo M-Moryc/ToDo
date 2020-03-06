@@ -41,5 +41,6 @@
     background-color: green;
     text-align: center;
     border-radius: 50%;
-
 }
+.notes__box ul{height:100%; width:100%;}
+.notes__box ul{overflow:hidden; overflow-y:scroll;}

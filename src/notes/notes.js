@@ -58,9 +58,11 @@ class notes extends Component {
     render() {
         return (
         <div className={classes.notes__box}>
+        <ul>
             {
               this.state.notesTable.map((item, i) => <Note addNote={this.addNote} updateNote={this.updateNote} removeNote={this.removeNote} text={item.text} key={i} id={i}/>
             )}
+          </ul>
             <div className={classes.add_note_button} onClick={this.addNote}>+</div>
         </div>
         );
