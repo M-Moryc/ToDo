@@ -22,7 +22,7 @@ class notes extends Component {
         });
     }
     updateNote = (index) => {
-      let array = this.state.notesTable;
+      const array = [...this.state.notesTable];
       array[parseInt(index)] = new NoteData(prompt());
       this.setState({
         notesTable: array
@@ -30,8 +30,7 @@ class notes extends Component {
       console.log(this.state.notesTable);
     }
     removeNote = (index) => {
-      console.log("removed");
-      let array = this.state.notesTable;
+      const array = [...this.state.notesTable];
       array.splice(parseInt(index), 1);
       this.setState({
         notesTable: array
