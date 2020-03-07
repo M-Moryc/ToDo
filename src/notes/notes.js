@@ -21,18 +21,18 @@ class notes extends Component {
             notesTable:[...this.state.notesTable, test]
         });
     }
-    updateNote = (e) => {
+    updateNote = (index) => {
       let array = this.state.notesTable;
-      array[parseInt(e.target.id)] = new NoteData(prompt());
+      array[parseInt(index)] = new NoteData(prompt());
       this.setState({
         notesTable: array
       })
       console.log(this.state.notesTable);
     }
-    removeNote = (e) => {
+    removeNote = (index) => {
       console.log("removed");
       let array = this.state.notesTable;
-      array.splice(parseInt(e.target.id), 1);
+      array.splice(parseInt(index), 1);
       this.setState({
         notesTable: array
       });
@@ -60,7 +60,13 @@ class notes extends Component {
         <div className={classes.notes__box}>
         <ul>
             {
-              this.state.notesTable.map((item, i) => <Note addNote={this.addNote} updateNote={this.updateNote} removeNote={this.removeNote} text={item.text} key={i} id={i}/>
+              this.state.notesTable.map((item, i) =>
+              <Note addNote={this.addNote}
+                    updateNote={() => this.updateNote(i)}
+                    removeNote={() => this.removeNote(i)}
+                    text={item.text}
+                    key={i}
+              />
             )}
           </ul>
             <div className={classes.add_note_button} onClick={this.addNote}>+</div>

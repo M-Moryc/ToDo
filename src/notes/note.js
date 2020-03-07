@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import classes from './notes.module.css';
 
-const note = (props) => {
+const Note = (props) => {
+
+    let [inEditMode, setEditMode] = useState(false);
+
     return (
         <li className={classes.note}>
             <div onClick={props.updateNote} id={props.id}>
@@ -12,4 +15,4 @@ const note = (props) => {
         </li>
     );
 }
-export default note;
+export default Note;
