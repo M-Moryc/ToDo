@@ -2,28 +2,28 @@
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 10vh 0 1vh 0;
+    margin: 5vh 0 1vh 0;
 }
 .addnote_box input {
     background-color: rgba(0,0,0,0.2);
-    padding: 0.5vh 1vw;
+    padding: 0.5vh 3vw;
     border: none;
-    border-bottom: 0.3vh solid black;
+    border-bottom: 2px solid black;
     box-shadow: 0px 0.5vh 1vh -0.2vh black;
-    font-size: 5vw;
+    font-size: 3.5vh;
     color: whitesmoke;
 }
 .addnote_box input:hover {
     cursor: pointer;
 }
 .addnote_box button {
-    margin: 5vh 0;
+    margin: 4vh 0;
     border: none;
     background-color: #42d897/*#E14658*/;
     box-shadow: 0px 0.6vh 0.5vh 0.25vh black;
     border-radius: 2vw;
-    font-size: 5vw;
-    padding: 1vw;
+    font-size: 4.5vh;
+    padding: 2vh;
     color: #192231;
     text-shadow: 0px 0.3vh 0.5vh black;
     cursor: pointer;
@@ -48,7 +48,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 5vw;
 
 }
 .note span:nth-child(1) {
@@ -57,16 +56,17 @@
     width: 80%;
     word-break: break-all;
     border-right: 0.25vw solid black;
-    font-size: 3vw;
+    font-size: 2.5vh;
 }
 .note span:nth-child(2) {
     width: 20%;
     color: #E14658;
     cursor: pointer;
-    text-shadow: 0px 0px 10px;
+    text-shadow: 0px 0px 1vh;
     transition: 0.5s linear;
+    font-size: 2vh;
 }
 .note span:nth-child(2):hover {
     transform: rotate(360deg);
-    font-size: 6vw;
+    font-size: 4vh;
 }
