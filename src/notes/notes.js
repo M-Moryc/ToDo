@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Note from './note';
+import {Note, AddNote} from './note';
 
 import classes from './notes.module.css';
 
@@ -14,11 +14,10 @@ class notes extends Component {
         notesTable: [" "]
     };
 
-    addNote = () => {
-        const test = new NoteData (prompt());
-        console.log(test)
+    addNote = (data) => {
+        let newNote = new NoteData(data);
         this.setState({
-            notesTable:[...this.state.notesTable, test]
+            notesTable:[...this.state.notesTable, newNote]
         });
     }
     updateNote = (index) => {
@@ -56,19 +55,18 @@ class notes extends Component {
 
     render() {
         return (
-        <div className={classes.notes__box}>
-        <ul>
-            {
-              this.state.notesTable.map((item, i) =>
-              <Note addNote={this.addNote}
-                    updateNote={() => this.updateNote(i)}
-                    removeNote={() => this.removeNote(i)}
-                    text={item.text}
-                    key={i}
-              />
-            )}
-          </ul>
-            <div className={classes.add_note_button} onClick={this.addNote}>+</div>
+        <div>
+          <AddNote addnote={this.addNote}/>
+          <div className={classes.noteslist}>
+              {
+                this.state.notesTable.map((item, i) =>
+                <Note updateNote={() => this.updateNote(i)}
+                      removeNote={() => this.removeNote(i)}
+                      text={item.text}
+                      key={i}
+                />
+              )}
+          </div>
         </div>
         );
     }

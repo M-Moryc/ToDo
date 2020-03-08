@@ -1,7 +1,10 @@
-.App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
+body {
   height: 100vh;
+  background: linear-gradient(#192231,#22252C) ;
+  background-repeat: no-repeat;
+}
+.App {
+  text-align: center;
+  width: 60vw;
+  margin: auto;
 }

@@ -1,46 +1,72 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.notes__box {
-    width: 90vw;
-    height: 90vh;
-    background-color: rgba(0, 0, 0, 0.6);
+.addnote_box {
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px 0 50px 0;
+}
+.addnote_box input {
+    background-color: rgba(0,0,0,0.2);
+    padding: 2px 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    box-shadow: 0px 5px 10px -2px black;
+    font-size: 34px;
+    color: whitesmoke;
+}
+.addnote_box input:hover {
+    cursor: pointer;
+}
+.addnote_box button {
+    margin: 20px 0;
+    border: none;
+    background-color: #42d897/*#E14658*/;
+    box-shadow: 0px 5px 10px 2px black;
+    border-radius: 10px;
+    font-size: 40px;
+    padding: 10px;
+    color: #192231;
+    text-shadow: 0px 2px 5px black;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+.addnote_box button:hover {
+    text-decoration: underline;
+}
+
+.noteslist {
+    display: flex;
+    color: whitesmoke;
     align-items: center;
-    padding: 20px;
-    box-shadow: 0px 0px 20px 2px black;
+    flex-direction: column;
 }
 .note {
-    width: 90%;
-    height: 80px;
-    background-color: red;
-    margin:20px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 0px 5px 10px -2px black;
+    border-radius: 5px;
+    margin: 10px 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+
 }
-.note div:nth-child(1) {
-    width: 90%;
-    height: 100%;
-    background-color: black;
-    color:white;
+.note span:nth-child(1) {
+    text-align: left;
+    padding: 5px 10px;
+    width: 80%;
+    word-break: break-all;
+    border-right: 2px solid black;
+    font-size: 34px;
 }
-.note div:nth-child(2) {
-    width: 10%;
-    height: 100%;
-    background-color: red;
+.note span:nth-child(2) {
+    width: 20%;
+    color: #E14658;
+    cursor: pointer;
+    text-shadow: 0px 0px 10px;
+    transition: 0.5s linear;
 }
-.add_note_button {
-    position: sticky;
-    top: 90vh;
-    left: 80vw;
-    width: 10vw;
-    height: 10vh;
-    background-color: green;
-    text-align: center;
-    border-radius: 50%;
+.note span:nth-child(2):hover {
+    transform: rotate(360deg);
+    font-size: 34px;
 }
-.notes__box ul{height:100%; width:100%;}
-.notes__box ul{overflow:hidden; overflow-y:scroll;}
