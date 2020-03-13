@@ -4,11 +4,15 @@ import classes from './notes.module.css';
 
 const Note = (props) => {
 
-    let [inEditMode, setEditMode] = useState(false);
+    const [content, setContent] = useState('');
+
+    const handleChange = (e) => {
+        props.updateNote(e.target.value);
+    }
 
     return (
         <div className={classes.note}>
-            <span onClick={props.updateNote}>{props.text}</span>
+            <input className={classes.noteDisplay} onChange={handleChange} value={props.text}></input>
             <span onClick={props.removeNote}>-</span>
         </div>
     );

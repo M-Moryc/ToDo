@@ -50,13 +50,26 @@
     align-items: center;
 
 }
-.note span:nth-child(1) {
+.noteDisplay{
+    background-color: inherit;
+    color: inherit;
     text-align: left;
     padding: 1vh 3vw;
     width: 80%;
     word-break: break-all;
+    border: 0px;
     border-right: 0.25vw solid black;
     font-size: 2.5vh;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+.noteDisplay:focus{
+  padding:5vh;
+  border-radius: 2vw;
+  box-shadow: 0 0 0.5vw rgba(81, 203, 238, 1);
+
 }
 .note span:nth-child(2) {
     width: 20%;

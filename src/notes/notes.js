@@ -20,13 +20,12 @@ class notes extends Component {
             notesTable:[...this.state.notesTable, newNote]
         });
     }
-    updateNote = (index) => {
+    updateNote = (index, data) => {
       const array = [...this.state.notesTable];
-      array[parseInt(index)] = new NoteData(prompt());
+      array[parseInt(index)] = new NoteData(data);
       this.setState({
         notesTable: array
       })
-      console.log(this.state.notesTable);
     }
     removeNote = (index) => {
       const array = [...this.state.notesTable];
@@ -60,7 +59,7 @@ class notes extends Component {
           <div className={classes.noteslist}>
               {
                 this.state.notesTable.map((item, i) =>
-                <Note updateNote={() => this.updateNote(i)}
+                <Note updateNote={(data) => this.updateNote(i, data)}
                       removeNote={() => this.removeNote(i)}
                       text={item.text}
                       key={i}
